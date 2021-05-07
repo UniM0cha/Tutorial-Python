@@ -1,0 +1,400 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="+F$*Dp06{x6]~`.Y,YRU">data</variable>
+    <variable id="Ix{$`KZfTY@T0o2sZVr3">date</variable>
+    <variable id="#/@nbT~z^o[3G+3y:y1i">df</variable>
+    <variable id="Tk_ND*,wR2aY5xMNTH4c">year</variable>
+    <variable id="8m$a~-qb::8iiW5q-sd,">variable</variable>
+    <variable id="l^Md^(Nt%x8Upk|cVhUQ">confirmation</variable>
+    <variable id="UwwKqjt^WE%BU%(:~rRt">month</variable>
+  </variables>
+  <block type="pandas_library" id="FM`*%B!6T1KiY7T.5h4c" x="74" y="40">
+    <next>
+      <block type="pandas_csv_read" id="+o~xls.9gY[BNObHId!T">
+        <value name="d1">
+          <block type="variables_get" id="`4]}-JiY@zlp2=b;5kHn">
+            <field name="VAR" id="#/@nbT~z^o[3G+3y:y1i">df</field>
+          </block>
+        </value>
+        <value name="va">
+          <block type="fileopen" id="_j:5o$xmB{=AVXac[VGQ">
+            <field name="file_path">"data/코로나.csv"</field>
+          </block>
+        </value>
+        <next>
+          <block type="printf" id="~H~vb$~%_[^`aXd-Fw?-" disabled="true">
+            <value name="content1">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+              <block type="pandas_info" id="GdBXLwove,La=DQ3O+$}">
+                <field name="DROP">info()</field>
+                <value name="VAR">
+                  <block type="variables_get" id="?bH8Aw7p?/Y$R~`!IY48">
+                    <field name="VAR" id="#/@nbT~z^o[3G+3y:y1i">df</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="pandas_drop" id="p45KB.A=HbyThlNI/SKs">
+                <value name="d1">
+                  <block type="variables_get" id="ln^!:Wd3a6FtlJZ?g.$U">
+                    <field name="VAR" id="#/@nbT~z^o[3G+3y:y1i">df</field>
+                  </block>
+                </value>
+                <value name="d2">
+                  <block type="variables_get" id="bnYiAWCug)=,Om1+)^ZP">
+                    <field name="VAR" id="#/@nbT~z^o[3G+3y:y1i">df</field>
+                  </block>
+                </value>
+                <value name="d3">
+                  <shadow type="indata" id="Z;aaS#V)pGTd-Bf)0Wpp">
+                    <field name="indata1">[2,3,4,6,7,8,9,10,11]</field>
+                  </shadow>
+                </value>
+                <value name="d4">
+                  <shadow type="indata" id="K,h2rjnC3ML;|J;Mz`)S">
+                    <field name="indata1">"columns"</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="printf" id="#:x7;c$lMf{,p1;iSfYK">
+                    <value name="content1">
+                      <shadow type="indata">
+                        <field name="indata1"></field>
+                      </shadow>
+                      <block type="pandas_head" id="W;VLDjA+Yc-Zze6cFBqQ">
+                        <field name="DROP">head()</field>
+                        <value name="VAR">
+                          <block type="variables_get" id="]@7x0%RagV*D)/Fi;}n1">
+                            <field name="VAR" id="#/@nbT~z^o[3G+3y:y1i">df</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="printf" id=".QluHW1+9{hAA8J:~h2J">
+                        <value name="content1">
+                          <shadow type="indata">
+                            <field name="indata1"></field>
+                          </shadow>
+                          <block type="pandas_info" id="|]v+Kt)l@S!)Bp_C+zJL">
+                            <field name="DROP">info()</field>
+                            <value name="VAR">
+                              <block type="variables_get" id=",WKi[CHM6YpfD7jU@_`o">
+                                <field name="VAR" id="#/@nbT~z^o[3G+3y:y1i">df</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="numpy_library" id="!{[1ioJ]%@`@yyeCOY]^" x="71" y="410">
+    <next>
+      <block type="create_np_array" id="-Gype@/fKtt=]iF`Zr2q">
+        <field name="list" id="+F$*Dp06{x6]~`.Y,YRU">data</field>
+        <value name="text">
+          <shadow type="indata" id="KSLbl/iVz7q#lN6N!VE:">
+            <field name="indata1"></field>
+          </shadow>
+          <block type="pandas_indexing" id="%LPLAwi?Ha5ju(s!JC2[">
+            <value name="d1">
+              <block type="variables_get" id="uGRfrMLGxll.[~|x$[LB">
+                <field name="VAR" id="#/@nbT~z^o[3G+3y:y1i">df</field>
+              </block>
+            </value>
+            <value name="LIST">
+              <shadow type="indata" id="G~yt=c4~SNk@zRnqQ+@Q">
+                <field name="indata1">'Confirmation_date'</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <value name="dtype">
+          <shadow type="indata" id="!v4,$RI(P}Z|:)hOdR?:">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <next>
+          <block type="printf" id="$|i)pwsQihm2.XqN2SmL">
+            <value name="content1">
+              <shadow type="indata" id=";-p/4gip?{O-j.+IaTqm">
+                <field name="indata1"></field>
+              </shadow>
+              <block type="variables_get" id="ng3H7*Q*h0*nm9?hCYJt">
+                <field name="VAR" id="+F$*Dp06{x6]~`.Y,YRU">data</field>
+              </block>
+            </value>
+            <next>
+              <block type="math_change" id="O*JFH$0noe5:{|VIqa,1">
+                <field name="VAR" id="l^Md^(Nt%x8Upk|cVhUQ">confirmation</field>
+                <field name="NAME">=</field>
+                <value name="DELTA">
+                  <shadow type="indata" id="ks=3xr;%{Y![cX{1Nu.)">
+                    <field name="indata1">0</field>
+                  </shadow>
+                  <block type="forif2" id="j-AOXdz:63QJK0Bl;o+b">
+                    <value name="SET0">
+                      <shadow type="indata" id="S_(HQC_86(:H~7D{oN#+">
+                        <field name="indata1">[</field>
+                      </shadow>
+                    </value>
+                    <value name="SET1">
+                      <shadow type="indata" id="jvm{,~Zq5CRN0)aVdJiC">
+                        <field name="indata1">0</field>
+                      </shadow>
+                    </value>
+                    <value name="SET2">
+                      <shadow type="indata" id="uKztu]I3}Nk/|}5?cJ{,">
+                        <field name="indata1">i</field>
+                      </shadow>
+                    </value>
+                    <value name="SET3">
+                      <shadow type="indata" id="Ci3xY?KpOI-Q8uvY^7G}">
+                        <field name="indata1">range(12)</field>
+                      </shadow>
+                    </value>
+                    <value name="SET4">
+                      <shadow type="indata" id="_L+zWdtmW,htAy3C40Hx">
+                        <field name="indata1">]</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="py_for" id="~8n*Vb~+f5e$De[S(wgR" x="67" y="645">
+    <value name="item">
+      <shadow type="indata" id="3*2jVbvN.7y:cIflBf+a">
+        <field name="indata1">row</field>
+      </shadow>
+    </value>
+    <value name="list">
+      <shadow type="indata" id="b@6Z[~[{=lX{q2Jk^pLm">
+        <field name="indata1">data</field>
+      </shadow>
+    </value>
+    <statement name="value">
+      <block type="math_change" id=",pp$z!w0$-Mm:Og[Lum9">
+        <field name="VAR" id="Ix{$`KZfTY@T0o2sZVr3">date</field>
+        <field name="NAME">=</field>
+        <value name="DELTA">
+          <shadow type="indata" id="1MOyhkkhwf!u-_i6DWD[">
+            <field name="indata1">row.split('-')</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="math_change" id="AS]G3l0k!$pi}RNlkOFA">
+            <field name="VAR" id="Tk_ND*,wR2aY5xMNTH4c">year</field>
+            <field name="NAME">=</field>
+            <value name="DELTA">
+              <shadow type="indata" id="H^YKbrI-M7X,dInt2WNV">
+                <field name="indata1">date[0]</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="math_change" id="kY2[n3fi,)]5JgXg8v~5">
+                <field name="VAR" id="UwwKqjt^WE%BU%(:~rRt">month</field>
+                <field name="NAME">=</field>
+                <value name="DELTA">
+                  <shadow type="indata" id="Fz--b-c!s}-]?s@EM2|}">
+                    <field name="indata1">date[1]</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="controls_if" id="Dlh-fD#0v^J1hEH/r{Z[">
+                    <value name="IF0">
+                      <shadow type="indata" id="5-,-m+3/,d2A:V)n|;8V">
+                        <field name="indata1">True</field>
+                      </shadow>
+                      <block type="logic_compare" id="Az.$=^kSuSZHhmnj!j2k">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <shadow type="indata" id="IZW8SR/zt$nx7f)Psc2|">
+                            <field name="indata1">0</field>
+                          </shadow>
+                          <block type="variables_get" id="$[MYLaoX5,Cs@f*yH~~)">
+                            <field name="VAR" id="Tk_ND*,wR2aY5xMNTH4c">year</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="indata" id="#wS3Ohx)0[Z}!vO$Sk=Q">
+                            <field name="indata1">'2021'</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="many_variables" id="aJSGOVScagAR{XG-F4:!">
+                        <field name="NAME">+=</field>
+                        <value name="NUMBER">
+                          <shadow type="indata" id="IE7jI2F,psJA*Nip0Rz}">
+                            <field name="indata1">x,y,z</field>
+                          </shadow>
+                          <block type="va_sel" id="!vRtm5#HAlM84*[`!h/O">
+                            <value name="list">
+                              <block type="variables_get" id="3T%T$AOrs/M/.[B6VyzM">
+                                <field name="VAR" id="l^Md^(Nt%x8Upk|cVhUQ">confirmation</field>
+                              </block>
+                            </value>
+                            <value name="dic1">
+                              <shadow type="indata" id="](dVTh]%DK/H^$TLVc.#">
+                                <field name="indata1">int(month) - 1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="VALUE">
+                          <shadow type="indata" id="?~zZb7KI8ot}i#1NnN!]">
+                            <field name="indata1">1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="py_for" id="y[4A6$QMiZa`GzdXK`s9" x="58" y="1066">
+    <value name="item">
+      <shadow type="indata" id="N=Nu}uwCGYA3Vl*oqXh3">
+        <field name="indata1">i</field>
+      </shadow>
+    </value>
+    <value name="list">
+      <shadow type="indata" id="6au6tz5?4Nr~Y`%c5:.=">
+        <field name="indata1">range(4)</field>
+      </shadow>
+    </value>
+    <statement name="value">
+      <block type="print_mutator" id="@{2osYR)d{,k]K]RF=Vs">
+        <mutation items="3"></mutation>
+        <value name="ADD0">
+          <block type="indata" id="_P[G4rThiB:U#I!w.O5L">
+            <field name="indata1">f'2021년 {i + 1}월 확진자 수는 '</field>
+          </block>
+        </value>
+        <value name="ADD1">
+          <block type="va_sel" id="Xa|me!Q].IoR9{^Zee`Z">
+            <value name="list">
+              <block type="variables_get" id="H3${m[4YRT|}DR^Awfy=">
+                <field name="VAR" id="l^Md^(Nt%x8Upk|cVhUQ">confirmation</field>
+              </block>
+            </value>
+            <value name="dic1">
+              <shadow type="indata" id="EEaOab2188yZ)Js`lus3">
+                <field name="indata1">i</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <value name="ADD2">
+          <block type="indata" id="3}#TO,m8hjSb_zBEapgx">
+            <field name="indata1">"입니다"</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="visualization_library" id="cj%z3sAO%Fxhsz0(xXGd">
+        <next>
+          <block type="create_np_array" id="uqv}V458~NG$Y`2g{a(8">
+            <field name="list" id="8m$a~-qb::8iiW5q-sd,">variable</field>
+            <value name="text">
+              <shadow type="indata" id="4BmShr|?fB(8F}o22?W[">
+                <field name="indata1">[confirmation[0],confirmation[1],confirmation[2],confirmation[3]]</field>
+              </shadow>
+            </value>
+            <value name="dtype">
+              <shadow type="indata" id="Mn,^AvI2_/9shY?3f.9/">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <next>
+              <block type="create_list" id="vuujB)Kk2=;X1xmVhAP5">
+                <value name="list">
+                  <block type="variables_get" id=":QJ:5%[qjaj;cE[;jdKP">
+                    <field name="VAR" id="UwwKqjt^WE%BU%(:~rRt">month</field>
+                  </block>
+                </value>
+                <value name="text">
+                  <shadow type="indata" id="FjHl@y@U=OuMp-M!nPA[">
+                    <field name="indata1">'1month', '2month', '3month', '4month'</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="matplotlib_pre_graph_plt" id="s+8;BLjVlNcoSw#U{{Yi">
+                    <field name="matplotlib_graph_select">matplotlib_line</field>
+                    <value name="xx">
+                      <shadow type="indata" id="CEvW.:M~6kFzaWXhB9l9">
+                        <field name="indata1">month</field>
+                      </shadow>
+                    </value>
+                    <value name="yy">
+                      <shadow type="indata" id="9.}Ydm21*m1VL]T!NrqU">
+                        <field name="indata1">variable</field>
+                      </shadow>
+                    </value>
+                    <value name="matplotlib_pre_graph_Title">
+                      <shadow type="indata" id="4;v[^Z(|/z=LWlpdb#JJ">
+                        <field name="indata1">2021_COVID19</field>
+                      </shadow>
+                    </value>
+                    <value name="matplotlib_pre_graph_Xlable">
+                      <shadow type="indata" id="4-lbJ-^h$?nX,U*:5j+3">
+                        <field name="indata1">month</field>
+                      </shadow>
+                    </value>
+                    <value name="matplotlib_pre_graph_Ylable">
+                      <shadow type="indata" id="k*#ReE!)?m`4HV*s[qv8">
+                        <field name="indata1">confirmation</field>
+                      </shadow>
+                    </value>
+                    <value name="matplotlib_pre_legend">
+                      <shadow type="indata" id="VqG[pN#Q6m`D~-IU(U(T">
+                        <field name="indata1">confirmation</field>
+                      </shadow>
+                    </value>
+                    <value name="matplotlib_pre_color">
+                      <shadow type="indata" id="P=UbqWgFx]uz_{s[m*6n">
+                        <field name="indata1">"blue"</field>
+                      </shadow>
+                    </value>
+                    <value name="matplotlib_pre_other">
+                      <shadow type="indata" id="v@0omllM^u[6mwk/aIy~">
+                        <field name="indata1"></field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="matplotlib_plt_show" id="O~U(R}dF)2R1E!vy6z(x"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

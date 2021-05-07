@@ -1,0 +1,1026 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id=":Gp!xhWEBK{L,.q|w%@B">df</variable>
+    <variable id="z26n?#-2N5}xFZ!(.Y+,">passenger</variable>
+    <variable id="AhA~!$DALN@bV(?w5J!$">woman</variable>
+    <variable id="wC8,c6ahxS)oA;57aiqt">young</variable>
+    <variable id="(B1(XYB8~,A06N+#4|mX">passenger_time</variable>
+    <variable id="O46dCAL4@mj.jf{HO,_?">woman_time</variable>
+    <variable id="5lvfRhGSf6W!DL$o9Duz">young_time</variable>
+    <variable id=")T;=++qdLm#?B@v4t(8t">time</variable>
+    <variable id="pT:T{~#25t2Y),LG@0ha">passenger_week</variable>
+    <variable id="#^UD`5^+*Vt,_uK|lGXa">woman_week</variable>
+    <variable id="^saRaPyzeNr69{ST{!.M">young_week</variable>
+    <variable id="IUObOs{sb9LHgdz|lOg2">week</variable>
+  </variables>
+  <block type="pandas_library" id=".ZeO@)I`cg!#[^qX]`rT" x="86" y="71">
+    <next>
+      <block type="pandas_csv_read" id="4s.KFJ:wUOe]!S3+s7v=">
+        <value name="d1">
+          <block type="variables_get" id="h$D.$dN,?s5(X:n`Ej0#">
+            <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+          </block>
+        </value>
+        <value name="va">
+          <block type="fileopen" id="%!aB;~tl?GdGJ1ghtM?d">
+            <field name="file_path">"data/passby_data.CSV"</field>
+          </block>
+        </value>
+        <next>
+          <block type="printc" id="1`{)f8{!lX3wC=,dOLaK" disabled="true">
+            <value name="content">
+              <block type="variables_get" id="Nb,Y?VwLU+_O_kP~6KC[">
+                <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+              </block>
+            </value>
+            <next>
+              <block type="printf" id="gyu-oJ]7wPzYYU%oEpC1" disabled="true">
+                <value name="content1">
+                  <shadow type="indata" id="`j7qg1zfwIh=WWvoe5,_">
+                    <field name="indata1"></field>
+                  </shadow>
+                  <block type="pandas_info" id="Rr*]M/y;d/:1$jT9KYjG">
+                    <field name="DROP">info()</field>
+                    <value name="VAR">
+                      <block type="variables_get" id="}rPTteP}43Xy9v??(5j#">
+                        <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="printf" id=".^mV/HtdF833bLFkR_xH" disabled="true">
+                    <value name="content1">
+                      <shadow type="indata">
+                        <field name="indata1"></field>
+                      </shadow>
+                      <block type="pandas_info" id="sR8-,|IA`2Y2c$F-;jqB">
+                        <field name="DROP">describe()</field>
+                        <value name="VAR">
+                          <block type="variables_get" id="N5;yZ9sZ]C7l0Z8UM/`b">
+                            <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="numpy_library" id="iFo_j[~68U~[hJV_MHZv">
+                        <next>
+                          <block type="create_np_array" id="__T;oY/ZJ(KhvO{g:]gy">
+                            <field name="list" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                            <value name="text">
+                              <shadow type="indata" id="ym||%NQt,1fo?o`Z|bBq">
+                                <field name="indata1">[1,2,3,4]</field>
+                              </shadow>
+                              <block type="pandas_oc" id=",7bout`aea^Ds1LI{CR5">
+                                <field name="DROP">loc</field>
+                                <value name="d0">
+                                  <block type="variables_get" id="Mq1b2VIZyvu?q?.](.Rg">
+                                    <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                                  </block>
+                                </value>
+                                <value name="d1">
+                                  <shadow type="indata" id="h7P?fgRek[rJJ$I3GyA8">
+                                    <field name="indata1">: , 'passenger'</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="dtype">
+                              <shadow type="indata" id="7Hrm49M7Q/y5Ljg]c{Lt">
+                                <field name="indata1">dtype = int</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="printc" id="Lln(pn/HRt(P|afb83MT" disabled="true">
+                                <value name="content">
+                                  <block type="variables_get" id="27C}(:?R4hbM0jcT`o3%">
+                                    <field name="VAR" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="create_np_array" id="78/o|Q=O_uL|.j^$GwTK">
+                                    <field name="list" id="AhA~!$DALN@bV(?w5J!$">woman</field>
+                                    <value name="text">
+                                      <shadow type="indata">
+                                        <field name="indata1">[1,2,3,4]</field>
+                                      </shadow>
+                                      <block type="pandas_oc" id="%BYD0.W1QjsY`A#H2jRO">
+                                        <field name="DROP">loc</field>
+                                        <value name="d0">
+                                          <block type="variables_get" id="@[fKbnCW3)v3!o5s^sy;">
+                                            <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                                          </block>
+                                        </value>
+                                        <value name="d1">
+                                          <shadow type="indata" id="^5rOnnZ(s!K3p}]2ezU~">
+                                            <field name="indata1">: , 'woman'</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="dtype">
+                                      <shadow type="indata" id="gz|6DA[ONbbW%mO:Ik@w">
+                                        <field name="indata1">dtype = int</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="create_np_array" id="n9~4vO%vPP9Q$h4%0hI7">
+                                        <field name="list" id="wC8,c6ahxS)oA;57aiqt">young</field>
+                                        <value name="text">
+                                          <shadow type="indata">
+                                            <field name="indata1">[1,2,3,4]</field>
+                                          </shadow>
+                                          <block type="pandas_oc" id="EGHh~Dzo0~7D5k}qp|:t">
+                                            <field name="DROP">loc</field>
+                                            <value name="d0">
+                                              <block type="variables_get" id="55R]CyNDT(:3SacT^6r+">
+                                                <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                                              </block>
+                                            </value>
+                                            <value name="d1">
+                                              <shadow type="indata" id="s}PY:nH;|j!)7:II@PPy">
+                                                <field name="indata1">: , 'young'</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="dtype">
+                                          <shadow type="indata" id="OkDukw,pg#]z4V194^rS">
+                                            <field name="indata1">dtype = int</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="csvdataframe_J" id="v2KePp1*Zf@MyE14dL1=">
+                                            <value name="input_var">
+                                              <block type="variables_get" id="sjd`Fqof2WBCO}3xh^s4">
+                                                <field name="VAR" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                                              </block>
+                                            </value>
+                                            <value name="csv">
+                                              <shadow type="indata" id="*rf9jQE@)MscC+L$_]a(">
+                                                <field name="indata1"></field>
+                                              </shadow>
+                                              <block type="numpy_reshape" id="1inJWc_BLpqXWut!dF6F">
+                                                <value name="numpy_reshape_val">
+                                                  <block type="variables_get" id="38kx80T9S//5GU,_7-CH">
+                                                    <field name="VAR" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                                                  </block>
+                                                </value>
+                                                <value name="numpy_reshape_struct">
+                                                  <shadow type="indata" id="ju}sMK3_1|sD{V3+|_(r">
+                                                    <field name="indata1">7,24</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="printc" id=",]s]r7_f?/(RD^{*zj-`" disabled="true">
+                                                <value name="content">
+                                                  <block type="variables_get" id="o%s2qxIxR|xyY;9K53Dd">
+                                                    <field name="VAR" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="csvdataframe_J" id="-CEN_L(P]7oKH_e=M!|#">
+                                                    <value name="input_var">
+                                                      <block type="variables_get" id="J0@;Z-pPFtMopp-N/%8M">
+                                                        <field name="VAR" id="AhA~!$DALN@bV(?w5J!$">woman</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="csv">
+                                                      <shadow type="indata">
+                                                        <field name="indata1"></field>
+                                                      </shadow>
+                                                      <block type="numpy_reshape" id="OTbL-B/,XXcttu^Kf):*">
+                                                        <value name="numpy_reshape_val">
+                                                          <block type="variables_get" id="c[Kz+$,nzNUnX8[*BHAI">
+                                                            <field name="VAR" id="AhA~!$DALN@bV(?w5J!$">woman</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="numpy_reshape_struct">
+                                                          <shadow type="indata" id="~P*{4d!pV`E+ds!Z{La_">
+                                                            <field name="indata1">7,24</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="csvdataframe_J" id="/t6}8`O_wP_1:[A=]L(2">
+                                                        <value name="input_var">
+                                                          <block type="variables_get" id=".cBX89UYouE?wnsH$5;Y">
+                                                            <field name="VAR" id="wC8,c6ahxS)oA;57aiqt">young</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="csv">
+                                                          <shadow type="indata">
+                                                            <field name="indata1"></field>
+                                                          </shadow>
+                                                          <block type="numpy_reshape" id=",vGy.`TQoVhgJ0(7sN,X">
+                                                            <value name="numpy_reshape_val">
+                                                              <block type="variables_get" id="z)FxgpLtF6$QBD%|JT4]">
+                                                                <field name="VAR" id="wC8,c6ahxS)oA;57aiqt">young</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="numpy_reshape_struct">
+                                                              <shadow type="indata" id="4N+~l/PgYs8]m`NkbUpE">
+                                                                <field name="indata1">7,24</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="math_change" id="HwMe?XJX{Q7P-=clcvKR">
+                                                            <field name="VAR" id="(B1(XYB8~,A06N+#4|mX">passenger_time</field>
+                                                            <field name="NAME">=</field>
+                                                            <value name="DELTA">
+                                                              <shadow type="indata" id="OIzCWaW)TJ5C!gCZnKzH">
+                                                                <field name="indata1">3</field>
+                                                              </shadow>
+                                                              <block type="block_sum_min" id="Q.[+[@1QMCKpKxKl13WF">
+                                                                <field name="DROP">sum</field>
+                                                                <value name="VAR">
+                                                                  <block type="variables_get" id="q]8!as=O;4B:4LhLgRR7">
+                                                                    <field name="VAR" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="INPUT">
+                                                                  <shadow type="indata" id="s)q#9|I1{%m2L}]JTqpo">
+                                                                    <field name="indata1"></field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="math_change" id="4:Ld=bJ2_;-$u+;2R|?}">
+                                                                <field name="VAR" id="O46dCAL4@mj.jf{HO,_?">woman_time</field>
+                                                                <field name="NAME">=</field>
+                                                                <value name="DELTA">
+                                                                  <shadow type="indata">
+                                                                    <field name="indata1">3</field>
+                                                                  </shadow>
+                                                                  <block type="block_sum_min" id="Vlshlc=;M~(i!!#@YFU!">
+                                                                    <field name="DROP">sum</field>
+                                                                    <value name="VAR">
+                                                                      <block type="variables_get" id="to9yORr/@`FKk7pP;Bo.">
+                                                                        <field name="VAR" id="AhA~!$DALN@bV(?w5J!$">woman</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="INPUT">
+                                                                      <shadow type="indata" id="/vZ#^feiRJh1qscvZq*#">
+                                                                        <field name="indata1"></field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="math_change" id="Toe|Vm?-GNN(HH4aCO8u">
+                                                                    <field name="VAR" id="5lvfRhGSf6W!DL$o9Duz">young_time</field>
+                                                                    <field name="NAME">=</field>
+                                                                    <value name="DELTA">
+                                                                      <shadow type="indata">
+                                                                        <field name="indata1">3</field>
+                                                                      </shadow>
+                                                                      <block type="block_sum_min" id="mHuV.A)@E?Pl.muib@u8">
+                                                                        <field name="DROP">sum</field>
+                                                                        <value name="VAR">
+                                                                          <block type="variables_get" id="%Hx-M5!;HopwY%[vQTJ@">
+                                                                            <field name="VAR" id="wC8,c6ahxS)oA;57aiqt">young</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="INPUT">
+                                                                          <shadow type="indata" id="yq4r5+~9)vvIB1PzXi$W">
+                                                                            <field name="indata1"></field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="printtv" id="#8%Fss_vA2ZlJ[DGAacI" disabled="true">
+                                                                        <value name="content1">
+                                                                          <shadow type="indata" id="NAi/=3Q`5WOq395.{|xY">
+                                                                            <field name="indata1">"시간대별 통행자"</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <value name="content2">
+                                                                          <block type="variables_get" id="i;Vag)N_Y)mv(RS@mnj]">
+                                                                            <field name="VAR" id="(B1(XYB8~,A06N+#4|mX">passenger_time</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="math_change" id="!i?+i`=]7S+s{lSD.H}t">
+                                                                            <field name="VAR" id=")T;=++qdLm#?B@v4t(8t">time</field>
+                                                                            <field name="NAME">=</field>
+                                                                            <value name="DELTA">
+                                                                              <shadow type="indata" id="D^`Y%!.+3GYX]2+l_xr~">
+                                                                                <field name="indata1">range(0,24,1)</field>
+                                                                              </shadow>
+                                                                              <block type="range3" id="*YrS^(-pdB2~go/2!n*{">
+                                                                                <value name="x">
+                                                                                  <shadow type="indata" id=":5pifJB=HAJIlAzB_(=%">
+                                                                                    <field name="indata1">0</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <value name="y">
+                                                                                  <shadow type="indata" id="h~,Im9Pv.[fPO{C|{3AI">
+                                                                                    <field name="indata1">24</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <value name="z">
+                                                                                  <shadow type="indata" id="`UmJQn8,$n?Ei6T2dbCi">
+                                                                                    <field name="indata1">1</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="visualization_library" id="IfZ#^e)JIqdGkVSlLgen">
+                                                                                <next>
+                                                                                  <block type="matplotlib_main" id="c?STY]tC-f-0g[k80^#s">
+                                                                                    <value name="matplotlib_main_cols">
+                                                                                      <shadow type="math_number" id="CvCG1MG(O0A9vJ,:I^0s">
+                                                                                        <field name="NUM">1</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <value name="matplotlib_main_rows">
+                                                                                      <shadow type="math_number" id=")XN2$#X%hm;|XjST0;Zl">
+                                                                                        <field name="NUM">2</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="matplotlib_pre_graph" id="c=AIbT/Ra@7AEpE9n,:t">
+                                                                                        <field name="matplotlib_graph_select">matplotlib_line</field>
+                                                                                        <value name="matplotlib_pre_graph_location1">
+                                                                                          <shadow type="math_number" id="Z].j]NMv:n~lEx^Y~|5$">
+                                                                                            <field name="NUM">0</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="matplotlib_pre_graph_location2">
+                                                                                          <shadow type="math_number" id="r77ccYF|LzVO+Q!:.(d,">
+                                                                                            <field name="NUM">0</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="xx">
+                                                                                          <shadow type="indata" id="l0ejFb:20^O#y3F7WN}1">
+                                                                                            <field name="indata1">x_data</field>
+                                                                                          </shadow>
+                                                                                          <block type="variables_get" id="8.zqVe;]qy6EF${pC*/P">
+                                                                                            <field name="VAR" id=")T;=++qdLm#?B@v4t(8t">time</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="yy">
+                                                                                          <shadow type="indata" id="xK?{+^-`@c|2ZTXo-~+2">
+                                                                                            <field name="indata1">y_data</field>
+                                                                                          </shadow>
+                                                                                          <block type="variables_get" id=",l8GB+s@SP,}KetYAGM(">
+                                                                                            <field name="VAR" id="(B1(XYB8~,A06N+#4|mX">passenger_time</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="matplotlib_pre_graph_Title">
+                                                                                          <shadow type="indata" id="V#Xv|DzP{Px;P(xL#]$|">
+                                                                                            <field name="indata1">Timely</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="matplotlib_pre_graph_Xlable">
+                                                                                          <shadow type="indata" id="tPJ/YZM11O6[lk3e14wb">
+                                                                                            <field name="indata1">Time</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="matplotlib_pre_graph_Ylable">
+                                                                                          <shadow type="indata" id="n*IGM7gpP^o+[QujB{L^">
+                                                                                            <field name="indata1">Passenger</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="matplotlib_pre_legend">
+                                                                                          <shadow type="indata" id="P^V$QuQ=KNo#lFapza`6">
+                                                                                            <field name="indata1">Passenger</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="matplotlib_pre_color">
+                                                                                          <shadow type="indata" id="AbzMF|25!~q{6$HamglT">
+                                                                                            <field name="indata1"></field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="matplotlib_pre_other">
+                                                                                          <shadow type="indata" id="~OR^Cjk1JpoV/uJcnNbx">
+                                                                                            <field name="indata1"></field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="matplotlib_pre_graph" id="Uf!st]Ir)wIb{3K4pv6g">
+                                                                                            <field name="matplotlib_graph_select">matplotlib_line</field>
+                                                                                            <value name="matplotlib_pre_graph_location1">
+                                                                                              <shadow type="math_number" id="H9J*YDMzvn@zOacR%uQ^">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="matplotlib_pre_graph_location2">
+                                                                                              <shadow type="math_number" id="O3ploA{PPp#E8K9Q;=9%">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="xx">
+                                                                                              <shadow type="indata">
+                                                                                                <field name="indata1">x_data</field>
+                                                                                              </shadow>
+                                                                                              <block type="variables_get" id="|K)3E@d(g0N14rz[8/fD">
+                                                                                                <field name="VAR" id=")T;=++qdLm#?B@v4t(8t">time</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="yy">
+                                                                                              <shadow type="indata">
+                                                                                                <field name="indata1">y_data</field>
+                                                                                              </shadow>
+                                                                                              <block type="variables_get" id="Adu~i:ntj$0-pa@#)k*+">
+                                                                                                <field name="VAR" id="O46dCAL4@mj.jf{HO,_?">woman_time</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="matplotlib_pre_graph_Title">
+                                                                                              <shadow type="indata" id="^Y06bOw=3U7JtdI8Y3:U">
+                                                                                                <field name="indata1">Timely</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="matplotlib_pre_graph_Xlable">
+                                                                                              <shadow type="indata" id="cYhQUrLvN^hZ?{1|5e1L">
+                                                                                                <field name="indata1">Time</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="matplotlib_pre_graph_Ylable">
+                                                                                              <shadow type="indata" id="QPWH*SlE;]W3VBJ`2{1v">
+                                                                                                <field name="indata1">Passenger</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="matplotlib_pre_legend">
+                                                                                              <shadow type="indata" id="=o]i4g@MI;Wt0|p.YnO?">
+                                                                                                <field name="indata1">Woman</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="matplotlib_pre_color">
+                                                                                              <shadow type="indata" id="Sm+wJ9+^W*_btPVpG]+D">
+                                                                                                <field name="indata1"></field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="matplotlib_pre_other">
+                                                                                              <shadow type="indata" id="j,HvuXB:T:GwJc!)8/}b">
+                                                                                                <field name="indata1"></field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="matplotlib_pre_graph" id="ynwp%dvY^A#u0-WN){Ma">
+                                                                                                <field name="matplotlib_graph_select">matplotlib_line</field>
+                                                                                                <value name="matplotlib_pre_graph_location1">
+                                                                                                  <shadow type="math_number" id="Xo@|+wd!fsqxIf.A%#I#">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="matplotlib_pre_graph_location2">
+                                                                                                  <shadow type="math_number" id="EPw_xY0lV{Ft!F`veu5h">
+                                                                                                    <field name="NUM">0</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="xx">
+                                                                                                  <shadow type="indata">
+                                                                                                    <field name="indata1">x_data</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="variables_get" id="5V#,t721r%KI=^n30[JB">
+                                                                                                    <field name="VAR" id=")T;=++qdLm#?B@v4t(8t">time</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="yy">
+                                                                                                  <shadow type="indata">
+                                                                                                    <field name="indata1">y_data</field>
+                                                                                                  </shadow>
+                                                                                                  <block type="variables_get" id="YFOM4ED#?ugxMSNIYewI">
+                                                                                                    <field name="VAR" id="5lvfRhGSf6W!DL$o9Duz">young_time</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="matplotlib_pre_graph_Title">
+                                                                                                  <shadow type="indata" id="J|qcNDhFZ3,9rHW^O2F3">
+                                                                                                    <field name="indata1">Timely</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="matplotlib_pre_graph_Xlable">
+                                                                                                  <shadow type="indata" id="Z|I~=;cY,X8W@Cqhv`-w">
+                                                                                                    <field name="indata1">Time</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="matplotlib_pre_graph_Ylable">
+                                                                                                  <shadow type="indata" id="Ewy:Y,3Y|L^vicrBH(z8">
+                                                                                                    <field name="indata1">Passenger</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="matplotlib_pre_legend">
+                                                                                                  <shadow type="indata" id="-9s1#tuhGIjQ}fD/IJyr">
+                                                                                                    <field name="indata1">Young</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="matplotlib_pre_color">
+                                                                                                  <shadow type="indata" id="J;d$AeC)po|Tf3W4V0s,">
+                                                                                                    <field name="indata1"></field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <value name="matplotlib_pre_other">
+                                                                                                  <shadow type="indata" id="qG)(97%$DdW3{9i@,rjf">
+                                                                                                    <field name="indata1"></field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                  <block type="matplotlib_plt_show" id="7kTk%Dqc?rojQ;;}Tiv~">
+                                                                                                    <next>
+                                                                                                      <block type="math_change" id="!.ldPVS(/EO[,DlP_bG6">
+                                                                                                        <field name="VAR" id="pT:T{~#25t2Y),LG@0ha">passenger_week</field>
+                                                                                                        <field name="NAME">=</field>
+                                                                                                        <value name="DELTA">
+                                                                                                          <shadow type="indata" id="%Ig*,cp~:mE;D6~7B)5-">
+                                                                                                            <field name="indata1">3</field>
+                                                                                                          </shadow>
+                                                                                                          <block type="block_sum_min" id="e[C0|ZQp5LE|AO{Dy^l{">
+                                                                                                            <field name="DROP">sum</field>
+                                                                                                            <value name="VAR">
+                                                                                                              <block type="variables_get" id="JAu5.E:+89A[wIj33RUy">
+                                                                                                                <field name="VAR" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                            <value name="INPUT">
+                                                                                                              <shadow type="indata" id="Oot5]A.ELyiCLDX.]7kZ">
+                                                                                                                <field name="indata1">axis=1</field>
+                                                                                                              </shadow>
+                                                                                                            </value>
+                                                                                                          </block>
+                                                                                                        </value>
+                                                                                                        <next>
+                                                                                                          <block type="math_change" id="nPBVgaN,8rHBo.M3Sa5n">
+                                                                                                            <field name="VAR" id="#^UD`5^+*Vt,_uK|lGXa">woman_week</field>
+                                                                                                            <field name="NAME">=</field>
+                                                                                                            <value name="DELTA">
+                                                                                                              <shadow type="indata">
+                                                                                                                <field name="indata1">3</field>
+                                                                                                              </shadow>
+                                                                                                              <block type="block_sum_min" id="ktgw2X49vt[h?e*J~(Pf">
+                                                                                                                <field name="DROP">sum</field>
+                                                                                                                <value name="VAR">
+                                                                                                                  <block type="variables_get" id="Yx(h^?V/gvC4*~76e*69">
+                                                                                                                    <field name="VAR" id="AhA~!$DALN@bV(?w5J!$">woman</field>
+                                                                                                                  </block>
+                                                                                                                </value>
+                                                                                                                <value name="INPUT">
+                                                                                                                  <shadow type="indata" id="|i@K4n)SeH3W:S1Mrp|9">
+                                                                                                                    <field name="indata1">axis=1</field>
+                                                                                                                  </shadow>
+                                                                                                                </value>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                            <next>
+                                                                                                              <block type="math_change" id="AW2eHAqHZx-FL3ob@AT@">
+                                                                                                                <field name="VAR" id="^saRaPyzeNr69{ST{!.M">young_week</field>
+                                                                                                                <field name="NAME">=</field>
+                                                                                                                <value name="DELTA">
+                                                                                                                  <shadow type="indata">
+                                                                                                                    <field name="indata1">3</field>
+                                                                                                                  </shadow>
+                                                                                                                  <block type="block_sum_min" id="#=Vi_azeM)eR1s[skt@y">
+                                                                                                                    <field name="DROP">sum</field>
+                                                                                                                    <value name="VAR">
+                                                                                                                      <block type="variables_get" id=")3W(xz7)gZ}8qtySJmaS">
+                                                                                                                        <field name="VAR" id="wC8,c6ahxS)oA;57aiqt">young</field>
+                                                                                                                      </block>
+                                                                                                                    </value>
+                                                                                                                    <value name="INPUT">
+                                                                                                                      <shadow type="indata" id="0Ewbhc]_C4?5@k}Nu=Xd">
+                                                                                                                        <field name="indata1">axis=1</field>
+                                                                                                                      </shadow>
+                                                                                                                    </value>
+                                                                                                                  </block>
+                                                                                                                </value>
+                                                                                                                <next>
+                                                                                                                  <block type="printtv" id="/GN:d8HHD@#+8j1e5H(n" disabled="true">
+                                                                                                                    <value name="content1">
+                                                                                                                      <shadow type="indata" id="9-LWiY-BTA`B7EPKG;Rw">
+                                                                                                                        <field name="indata1">"요일별 통행자"</field>
+                                                                                                                      </shadow>
+                                                                                                                    </value>
+                                                                                                                    <value name="content2">
+                                                                                                                      <block type="variables_get" id="k_GXg,STQa79[h5Y+}ja">
+                                                                                                                        <field name="VAR" id="pT:T{~#25t2Y),LG@0ha">passenger_week</field>
+                                                                                                                      </block>
+                                                                                                                    </value>
+                                                                                                                    <next>
+                                                                                                                      <block type="math_change" id="B`j,zgoGmm$!-45cESbx">
+                                                                                                                        <field name="VAR" id="IUObOs{sb9LHgdz|lOg2">week</field>
+                                                                                                                        <field name="NAME">=</field>
+                                                                                                                        <value name="DELTA">
+                                                                                                                          <shadow type="indata" id="!J5VBn$P:4!-1^p0f1IF">
+                                                                                                                            <field name="indata1">3</field>
+                                                                                                                          </shadow>
+                                                                                                                          <block type="range3" id="YDrU/MSp)0G_QZ5N*/dq">
+                                                                                                                            <value name="x">
+                                                                                                                              <shadow type="indata" id="},Q{.cA6S)r9/=gh=-gL">
+                                                                                                                                <field name="indata1">0</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="y">
+                                                                                                                              <shadow type="indata" id="p[byxhU3uFkoVFQ*Thzc">
+                                                                                                                                <field name="indata1">7</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="z">
+                                                                                                                              <shadow type="indata" id="kQ}nOTA4/rRI$(N*+ekR">
+                                                                                                                                <field name="indata1">1</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                          </block>
+                                                                                                                        </value>
+                                                                                                                        <next>
+                                                                                                                          <block type="matplotlib_pre_graph" id="[h-}/Z!M[M#@~}qaNhHo">
+                                                                                                                            <field name="matplotlib_graph_select">matplotlib_line</field>
+                                                                                                                            <value name="matplotlib_pre_graph_location1">
+                                                                                                                              <shadow type="math_number" id="2uK1lk%bE^_jHd8s~cG2">
+                                                                                                                                <field name="NUM">0</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="matplotlib_pre_graph_location2">
+                                                                                                                              <shadow type="math_number" id="?GEzOnX6Izh!nZ`B:nZ-">
+                                                                                                                                <field name="NUM">1</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="xx">
+                                                                                                                              <shadow type="indata" id="W0}u!0JUt+FL.R17#rm*">
+                                                                                                                                <field name="indata1">x_data</field>
+                                                                                                                              </shadow>
+                                                                                                                              <block type="variables_get" id="YwGWh:9`uuh}I9r=QSU~">
+                                                                                                                                <field name="VAR" id="IUObOs{sb9LHgdz|lOg2">week</field>
+                                                                                                                              </block>
+                                                                                                                            </value>
+                                                                                                                            <value name="yy">
+                                                                                                                              <shadow type="indata" id="[Z(oLwO6?HBgvRyEA*r;">
+                                                                                                                                <field name="indata1">y_data</field>
+                                                                                                                              </shadow>
+                                                                                                                              <block type="variables_get" id=".WK{9lX[dRz3%V],OIbi">
+                                                                                                                                <field name="VAR" id="pT:T{~#25t2Y),LG@0ha">passenger_week</field>
+                                                                                                                              </block>
+                                                                                                                            </value>
+                                                                                                                            <value name="matplotlib_pre_graph_Title">
+                                                                                                                              <shadow type="indata" id="pL(n1{g6ec/(}x^8)2f8">
+                                                                                                                                <field name="indata1">Weekly</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="matplotlib_pre_graph_Xlable">
+                                                                                                                              <shadow type="indata" id="p8PK3/N5U!P/qS4AfqXj">
+                                                                                                                                <field name="indata1">Week</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="matplotlib_pre_graph_Ylable">
+                                                                                                                              <shadow type="indata" id="(=l{*]Qa(Cv,:(ySkhK;">
+                                                                                                                                <field name="indata1">Passenger</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="matplotlib_pre_legend">
+                                                                                                                              <shadow type="indata" id="L$li+R~@3(]4u63F[RY#">
+                                                                                                                                <field name="indata1">Passenger</field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="matplotlib_pre_color">
+                                                                                                                              <shadow type="indata" id="B?Z$Dm::g^+}v`[CHB4k">
+                                                                                                                                <field name="indata1"></field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <value name="matplotlib_pre_other">
+                                                                                                                              <shadow type="indata" id="}ndq|7OqW:09I=m}B04$">
+                                                                                                                                <field name="indata1"></field>
+                                                                                                                              </shadow>
+                                                                                                                            </value>
+                                                                                                                            <next>
+                                                                                                                              <block type="matplotlib_pre_graph" id="CYc8}4E/hQFQd,6qZDDA">
+                                                                                                                                <field name="matplotlib_graph_select">matplotlib_line</field>
+                                                                                                                                <value name="matplotlib_pre_graph_location1">
+                                                                                                                                  <shadow type="math_number" id=";cS{nAz0_t?P?ZA}5{16">
+                                                                                                                                    <field name="NUM">0</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="matplotlib_pre_graph_location2">
+                                                                                                                                  <shadow type="math_number" id="k3ba3{mQSVZKu7`4zGhy">
+                                                                                                                                    <field name="NUM">1</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="xx">
+                                                                                                                                  <shadow type="indata">
+                                                                                                                                    <field name="indata1">x_data</field>
+                                                                                                                                  </shadow>
+                                                                                                                                  <block type="variables_get" id="7A~O^-YYSNii.:;oW-x}">
+                                                                                                                                    <field name="VAR" id="IUObOs{sb9LHgdz|lOg2">week</field>
+                                                                                                                                  </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="yy">
+                                                                                                                                  <shadow type="indata">
+                                                                                                                                    <field name="indata1">y_data</field>
+                                                                                                                                  </shadow>
+                                                                                                                                  <block type="variables_get" id="4!v:l1mYi;!wL;D3S}(!">
+                                                                                                                                    <field name="VAR" id="#^UD`5^+*Vt,_uK|lGXa">woman_week</field>
+                                                                                                                                  </block>
+                                                                                                                                </value>
+                                                                                                                                <value name="matplotlib_pre_graph_Title">
+                                                                                                                                  <shadow type="indata" id="clq?:{W-j8xKxF)8r5UZ">
+                                                                                                                                    <field name="indata1">Weekly</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="matplotlib_pre_graph_Xlable">
+                                                                                                                                  <shadow type="indata" id="cx0%lpu=bb`#|6V]j:d.">
+                                                                                                                                    <field name="indata1">Week</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="matplotlib_pre_graph_Ylable">
+                                                                                                                                  <shadow type="indata" id="FS$8(9uMrvfo[B*o4J=A">
+                                                                                                                                    <field name="indata1">Passenger</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="matplotlib_pre_legend">
+                                                                                                                                  <shadow type="indata" id="u6!99+_I/a#Cnx2Qn|;T">
+                                                                                                                                    <field name="indata1">Woman</field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="matplotlib_pre_color">
+                                                                                                                                  <shadow type="indata" id="=xHh;?dz:k6!A?7=E=)A">
+                                                                                                                                    <field name="indata1"></field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <value name="matplotlib_pre_other">
+                                                                                                                                  <shadow type="indata" id="0mx}-27}v^KqRnbbsuSZ">
+                                                                                                                                    <field name="indata1"></field>
+                                                                                                                                  </shadow>
+                                                                                                                                </value>
+                                                                                                                                <next>
+                                                                                                                                  <block type="matplotlib_pre_graph" id="zU.YK%fR@c0l.xSU$u@j">
+                                                                                                                                    <field name="matplotlib_graph_select">matplotlib_line</field>
+                                                                                                                                    <value name="matplotlib_pre_graph_location1">
+                                                                                                                                      <shadow type="math_number" id="-SuggWZaN]G5LxiGB`_P">
+                                                                                                                                        <field name="NUM">0</field>
+                                                                                                                                      </shadow>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="matplotlib_pre_graph_location2">
+                                                                                                                                      <shadow type="math_number" id="}O1q;Ch0rp7^%]hR3z,i">
+                                                                                                                                        <field name="NUM">1</field>
+                                                                                                                                      </shadow>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="xx">
+                                                                                                                                      <shadow type="indata">
+                                                                                                                                        <field name="indata1">x_data</field>
+                                                                                                                                      </shadow>
+                                                                                                                                      <block type="variables_get" id="!3`[Z8?jUW:IQMfqdp61">
+                                                                                                                                        <field name="VAR" id="IUObOs{sb9LHgdz|lOg2">week</field>
+                                                                                                                                      </block>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="yy">
+                                                                                                                                      <shadow type="indata">
+                                                                                                                                        <field name="indata1">y_data</field>
+                                                                                                                                      </shadow>
+                                                                                                                                      <block type="variables_get" id="NFhe%Ds8]@Q.cSVt`YKV">
+                                                                                                                                        <field name="VAR" id="^saRaPyzeNr69{ST{!.M">young_week</field>
+                                                                                                                                      </block>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="matplotlib_pre_graph_Title">
+                                                                                                                                      <shadow type="indata" id="8L1Kg!0f^:Wr^z79+%},">
+                                                                                                                                        <field name="indata1">Weekly</field>
+                                                                                                                                      </shadow>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="matplotlib_pre_graph_Xlable">
+                                                                                                                                      <shadow type="indata" id="@A;R:D1~=w?%)b!vpbfu">
+                                                                                                                                        <field name="indata1">Week</field>
+                                                                                                                                      </shadow>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="matplotlib_pre_graph_Ylable">
+                                                                                                                                      <shadow type="indata" id="x2w6Iyi6xh+?-fGo*-#;">
+                                                                                                                                        <field name="indata1">Passenger</field>
+                                                                                                                                      </shadow>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="matplotlib_pre_legend">
+                                                                                                                                      <shadow type="indata" id="/2{wW7^pmKA#+t}TxCAx">
+                                                                                                                                        <field name="indata1">Young</field>
+                                                                                                                                      </shadow>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="matplotlib_pre_color">
+                                                                                                                                      <shadow type="indata" id="8Md,F2=+h;e]G`DOKA9Y">
+                                                                                                                                        <field name="indata1"></field>
+                                                                                                                                      </shadow>
+                                                                                                                                    </value>
+                                                                                                                                    <value name="matplotlib_pre_other">
+                                                                                                                                      <shadow type="indata" id="dwvKRpH8$|UbDv{}F1eS">
+                                                                                                                                        <field name="indata1"></field>
+                                                                                                                                      </shadow>
+                                                                                                                                    </value>
+                                                                                                                                    <next>
+                                                                                                                                      <block type="matplotlib_plt_show" id="z+].4UtX{p19iZ(6HJjc">
+                                                                                                                                        <next>
+                                                                                                                                          <block type="printtv" id="Mm_lmrbJJl{a_k.$M-_[">
+                                                                                                                                            <value name="content1">
+                                                                                                                                              <shadow type="indata" id="*_Y6ae?D2Mqoc:a,Uj2#">
+                                                                                                                                                <field name="indata1">"통행자와 여성간 상관관계"</field>
+                                                                                                                                              </shadow>
+                                                                                                                                            </value>
+                                                                                                                                            <value name="content2">
+                                                                                                                                              <block type="pandas_corr" id="O/rmw6gPO+8$HO.is{$,">
+                                                                                                                                                <field name="DROP">corrwith</field>
+                                                                                                                                                <value name="INPUT1">
+                                                                                                                                                  <block type="variables_get" id="wPY2y-*[`x:xtkPLmU@_">
+                                                                                                                                                    <field name="VAR" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                                                                                                                                                  </block>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="INPUT2">
+                                                                                                                                                  <shadow type="indata" id="Dmx9aLuK5pzS*-`7iNup">
+                                                                                                                                                    <field name="indata1"></field>
+                                                                                                                                                  </shadow>
+                                                                                                                                                  <block type="variables_get" id="%CSjX5Q`paC(sr5A@%-9">
+                                                                                                                                                    <field name="VAR" id="AhA~!$DALN@bV(?w5J!$">woman</field>
+                                                                                                                                                  </block>
+                                                                                                                                                </value>
+                                                                                                                                              </block>
+                                                                                                                                            </value>
+                                                                                                                                            <next>
+                                                                                                                                              <block type="printtv" id="hww2b=;B_[U:~Fbq85U8">
+                                                                                                                                                <value name="content1">
+                                                                                                                                                  <shadow type="indata" id="y4juHrF(gHj6+/Rzb:r/">
+                                                                                                                                                    <field name="indata1">"통행자와 30세이하 상관관계"</field>
+                                                                                                                                                  </shadow>
+                                                                                                                                                </value>
+                                                                                                                                                <value name="content2">
+                                                                                                                                                  <block type="pandas_corr" id="AC;a^ReL?-Ru[63[75e/">
+                                                                                                                                                    <field name="DROP">corrwith</field>
+                                                                                                                                                    <value name="INPUT1">
+                                                                                                                                                      <block type="variables_get" id="kXw%-W./sqZlCw2!a`$%">
+                                                                                                                                                        <field name="VAR" id="z26n?#-2N5}xFZ!(.Y+,">passenger</field>
+                                                                                                                                                      </block>
+                                                                                                                                                    </value>
+                                                                                                                                                    <value name="INPUT2">
+                                                                                                                                                      <shadow type="indata">
+                                                                                                                                                        <field name="indata1"></field>
+                                                                                                                                                      </shadow>
+                                                                                                                                                      <block type="variables_get" id="aU=QMR+,tG{(bl5|J7Ly">
+                                                                                                                                                        <field name="VAR" id="wC8,c6ahxS)oA;57aiqt">young</field>
+                                                                                                                                                      </block>
+                                                                                                                                                    </value>
+                                                                                                                                                  </block>
+                                                                                                                                                </value>
+                                                                                                                                                <next>
+                                                                                                                                                  <block type="printf" id="nL_SV@!(!e9rB8bl3g.F">
+                                                                                                                                                    <value name="content1">
+                                                                                                                                                      <shadow type="indata" id="J{M1!ISttuF!rfh-*1L6">
+                                                                                                                                                        <field name="indata1">'----데이터 지우고---'</field>
+                                                                                                                                                      </shadow>
+                                                                                                                                                    </value>
+                                                                                                                                                    <next>
+                                                                                                                                                      <block type="printf" id="]|xSfB]vu}a,zNdaUw:+">
+                                                                                                                                                        <value name="content1">
+                                                                                                                                                          <shadow type="indata" id="_pp!}pk0[[[]~q@8al9b">
+                                                                                                                                                            <field name="indata1"></field>
+                                                                                                                                                          </shadow>
+                                                                                                                                                          <block type="block_sum_min" id="3[{rlEtJ1q{%{i:BJm]/">
+                                                                                                                                                            <field name="DROP">sum</field>
+                                                                                                                                                            <value name="VAR">
+                                                                                                                                                              <block type="pandas_nanull" id="kX6)TcvTY$[rtX#67Fzw">
+                                                                                                                                                                <field name="DROP">isnull</field>
+                                                                                                                                                                <value name="VAR">
+                                                                                                                                                                  <block type="variables_get" id="EPjf;m?^]NW5e=ZU`[{4">
+                                                                                                                                                                    <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                                                                                                                                                                  </block>
+                                                                                                                                                                </value>
+                                                                                                                                                                <value name="INPUT">
+                                                                                                                                                                  <shadow type="indata" id="BEm`nh]!bN_qy;KtLFGM">
+                                                                                                                                                                    <field name="indata1"></field>
+                                                                                                                                                                  </shadow>
+                                                                                                                                                                </value>
+                                                                                                                                                              </block>
+                                                                                                                                                            </value>
+                                                                                                                                                            <value name="INPUT">
+                                                                                                                                                              <shadow type="indata" id="%8@a7O2Y_.{#DL3hP[Az">
+                                                                                                                                                                <field name="indata1"></field>
+                                                                                                                                                              </shadow>
+                                                                                                                                                            </value>
+                                                                                                                                                          </block>
+                                                                                                                                                        </value>
+                                                                                                                                                        <next>
+                                                                                                                                                          <block type="pandas_dropna" id="Qd$#2v4yJ~-B3-fyT~=+">
+                                                                                                                                                            <field name="DROP">fillna</field>
+                                                                                                                                                            <value name="d1">
+                                                                                                                                                              <block type="variables_get" id="T|TWO}nMNOsw4oa_6u#[">
+                                                                                                                                                                <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                                                                                                                                                              </block>
+                                                                                                                                                            </value>
+                                                                                                                                                            <value name="d2">
+                                                                                                                                                              <block type="variables_get" id="s@m-Vh%@ZBZ7zL?4IcuP">
+                                                                                                                                                                <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                                                                                                                                                              </block>
+                                                                                                                                                            </value>
+                                                                                                                                                            <value name="d3">
+                                                                                                                                                              <shadow type="indata" id="_Ec]!T_LuX3BK[iJAI[^">
+                                                                                                                                                                <field name="indata1">0</field>
+                                                                                                                                                              </shadow>
+                                                                                                                                                            </value>
+                                                                                                                                                            <next>
+                                                                                                                                                              <block type="printf" id="@lg,TPX6QUt*Rxy%M$L7">
+                                                                                                                                                                <value name="content1">
+                                                                                                                                                                  <shadow type="indata">
+                                                                                                                                                                    <field name="indata1"></field>
+                                                                                                                                                                  </shadow>
+                                                                                                                                                                  <block type="block_sum_min" id="*/!vUaV]cDF0vLbK,QsZ">
+                                                                                                                                                                    <field name="DROP">sum</field>
+                                                                                                                                                                    <value name="VAR">
+                                                                                                                                                                      <block type="pandas_nanull" id="|lH}]p;}w]Ay%j)8K_Al">
+                                                                                                                                                                        <field name="DROP">isnull</field>
+                                                                                                                                                                        <value name="VAR">
+                                                                                                                                                                          <block type="variables_get" id="+/7PyiSsD_h0bTJG)nx7">
+                                                                                                                                                                            <field name="VAR" id=":Gp!xhWEBK{L,.q|w%@B">df</field>
+                                                                                                                                                                          </block>
+                                                                                                                                                                        </value>
+                                                                                                                                                                        <value name="INPUT">
+                                                                                                                                                                          <shadow type="indata" id="IZ9mMD`D/8Rb|Z3U-$CL">
+                                                                                                                                                                            <field name="indata1"></field>
+                                                                                                                                                                          </shadow>
+                                                                                                                                                                        </value>
+                                                                                                                                                                      </block>
+                                                                                                                                                                    </value>
+                                                                                                                                                                    <value name="INPUT">
+                                                                                                                                                                      <shadow type="indata" id="rxKhhB))dPg7bE-KNkD{">
+                                                                                                                                                                        <field name="indata1"></field>
+                                                                                                                                                                      </shadow>
+                                                                                                                                                                    </value>
+                                                                                                                                                                  </block>
+                                                                                                                                                                </value>
+                                                                                                                                                              </block>
+                                                                                                                                                            </next>
+                                                                                                                                                          </block>
+                                                                                                                                                        </next>
+                                                                                                                                                      </block>
+                                                                                                                                                    </next>
+                                                                                                                                                  </block>
+                                                                                                                                                </next>
+                                                                                                                                              </block>
+                                                                                                                                            </next>
+                                                                                                                                          </block>
+                                                                                                                                        </next>
+                                                                                                                                      </block>
+                                                                                                                                    </next>
+                                                                                                                                  </block>
+                                                                                                                                </next>
+                                                                                                                              </block>
+                                                                                                                            </next>
+                                                                                                                          </block>
+                                                                                                                        </next>
+                                                                                                                      </block>
+                                                                                                                    </next>
+                                                                                                                  </block>
+                                                                                                                </next>
+                                                                                                              </block>
+                                                                                                            </next>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
